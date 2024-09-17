@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Home</title>
+
+    <!-- Linking external Bootstrap and FontAwesome -->
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    </style>  
+
+    <!-- Link to custom bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar will be dynamically inserted -->
+    <nav class="navbar navbar-expand-lg" id="navbar"></nav>
+
+    <!-- Your content goes here -->
+    <div class="container d-flex justify-content-center">
+        <a href="#">
+            <img src="./assets/images/content.jpg" class="img-fluid" width="1000" alt="Responsive image" d-flex> 
+        </a>
+    </div>
+
+    <div class="container my-3 py-6 text-center">
+        <div class="row mb-5">
+            <div class="col text-secondary">
+                <p class="mt-3">"That’s the thing about books. They let you travel without moving your feet."</p>
+                <p class="mt-2">Jhumpa Lahiri</p>
+                <br>                
+            </div>
+            <a href="books.html" id="txn" class="text-decoration-none text-start"><h1 class="name text-dark">Books</h1></a>
+            <hr class="border-3" style="color: #333;" />
+        </div>
+    </div>
+
+    <!-- Card container -->
+    <div class="container">
+        <div class="row" id="card-container">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container my-3 py-6 text-center">
+        <div class="row mb-5">
+            <a href="blog.html" id="txn" class="text-decoration-none text-start"><h1 class="name text-dark">Blog</h1></a>
+            <hr class="border-3" style="color: #333;" />
+        </div>
+    </div>
+
+    <!-- Card container -->
+    <div class="container">
+        <div class="row" id="card-cont">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+    <br><br>
+
+    <!-- About Section -->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-lg-6" style="margin-left: 4%;"> 
+                <a href="about.html" id="Ab" style="text-decoration: none;"><h1 class="text-dark mx-5">About</h1></a>
+                <hr class="border-3 mx-5" style="color: #333;" />
+                <p class="para text-dark mx-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <img src="./assets/images/4..jpg" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer will be dynamically inserted -->
+    <footer id="footer" class="footer-1"></footer>
+
+    <!--JS -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./modules/cards.js"></script>
+
+    <!-- Importing JS modules -->
+    <script type="module">
+        import { getNavbar, getFooter } from './modules/mainElements.js';
+
+        // Dynamically insert the navbar and footer
+        getNavbar('navbar');
+        getFooter('footer');
+    </script>
+    <script>
+        window.onload = function() {
+            displayCards(homebookCards, 'card-container');
+            displayCards(homeblogCards, 'card-cont');
+        };
+    </script>
+</body>
+</html>

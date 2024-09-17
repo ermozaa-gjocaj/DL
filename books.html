@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Books</title>
+
+    <!-- Linking external Bootstrap and FontAwesome -->
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    </style>  
+
+    <!-- Link to custom bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar will be dynamically inserted -->
+    <nav class="navbar navbar-expand-lg" id="navbar"></nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div id="bookCards" class="row mt-5">
+            <!-- Cards will be dynamically loaded -->
+        </div>
+    </div>
+
+    <!-- Footer will be dynamically inserted -->
+    <footer id="footer" class="footer-1"></footer>
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Importing JS modules -->
+    <script type="module">
+        import { getNavbar, getFooter } from './modules/mainElements.js';
+        import { getBooks } from './modules/books.js';
+
+        // Dynamically insert the navbar and footer
+        getNavbar('navbar');
+        getFooter('footer');
+
+        // Load the books dynamically into the cards
+        getBooks('bookCards');
+    </script>
+</body>
+</html>

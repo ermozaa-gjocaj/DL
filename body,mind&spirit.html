@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Body, Mind & Spirit</title>
+
+    <!-- Linking external Bootstrap and FontAwesome -->
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    </style>  
+
+    <!-- Link to custom bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar will be dynamically inserted -->
+    <nav class="navbar navbar-expand-lg" id="navbar"></nav>
+
+
+
+
+    <!-- Your content goes here -->
+<div class="container">
+    <br>
+    <h5 class="text-center text-dark fw-bold fs-1">Body, Mind & Spirit</h5>
+    <br>
+    <hr class="border-2" style="width:900px; margin: auto;">
+    <br>
+    <br>
+    <div class="row" id="card-container">
+        <!-- Cards will be injected here -->
+    </div>
+</div>
+
+    <!-- Footer will be dynamically inserted -->
+    <footer id="footer" class="footer-1"></footer>
+
+    <!--JS -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./modules/cards.js"></script>
+
+    <!-- Importing JS modules -->
+    <script type="module">
+        import { getNavbar, getFooter } from './modules/mainElements.js';
+
+        // Dynamically insert the navbar and footer
+        getNavbar('navbar');
+        getFooter('footer');
+    </script>
+    <script>
+        window.onload = function() {
+    displayCards(bmsCards, 'card-container');
+};
+    </script>
+</body>
+</html>

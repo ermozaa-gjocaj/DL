@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Blog</title>
+
+    <!-- Linking external Bootstrap and FontAwesome -->
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    </style>  
+
+    <!-- Link to custom bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar will be dynamically inserted -->
+    <nav class="navbar navbar-expand-lg" id="navbar"></nav>
+        <!-- Container for the blog cards -->
+<div class="container">
+    <div class="row" id="blogCardContainer"></div> <!-- Specific container for blog cards -->
+</div>
+
+<!-- Footer will be dynamically inserted -->
+<footer id="footer" class="footer-1"></footer>
+
+<!-- Bootstrap JS -->
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Importing JS modules -->
+<script type="module">
+    import { getNavbar, getFooter } from './modules/mainElements.js';
+
+    // Dynamically insert the navbar and footer
+    getNavbar('navbar');
+    getFooter('footer');
+</script>
+</script>
+<!-- Card.js must be loaded here -->
+<script src="./modules/cards.js"></script>
+
+<script>
+    // When the DOM is fully loaded, display the blog cards
+    document.addEventListener("DOMContentLoaded", function() {
+        displayCards(blogCards, 'blogCardContainer'); // New blogkCards array
+    });
+</script>
+</body>
+</html>

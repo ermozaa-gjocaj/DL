@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL-Contact</title>
+
+    <!-- Linking external Bootstrap and FontAwesome -->
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+    </style>  
+
+    <!-- Link to custom bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar will be dynamically inserted -->
+    <nav class="navbar navbar-expand-lg" id="navbar"></nav>
+
+        <!-- Your content goes here -->
+<br>
+        <section id="contact-form" class="container">
+            <p class="fs-4 text-dark text-center fw-bold">Contact Form</p>
+            
+            <div class="row text-dark ">
+                <form class="d-flex flex-column" action="received.html">
+                    <label for="name">Your Name *</label>
+                    <input type="text" name="name" max="50" required class="text-dark " >
+                    <br>
+                    <label for="email">E-Mail Address *</label>
+                    <input type="email" name="email" max="50" required class="text-dark" >
+                    <br>
+                    <label for="message">Message</label>
+                    <textarea class="text-dark " required  name="message" style="height: 20vh;">
+    
+                    </textarea>     
+                    <div class="contact-button d-flex justify-content-end">
+                        <input type="submit" class="mt-4 fw-bold w-25 d-flex justify-content-center">
+                        
+                    </div>
+                    <br><br>
+                </form>
+               
+            </div>
+        </section>
+    
+
+<!-- Footer will be dynamically inserted -->
+<footer id="footer" class="footer-1"></footer>
+
+<!-- Bootstrap JS -->
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Importing JS modules -->
+<script type="module">
+    import { getNavbar, getFooter } from './modules/mainElements.js';
+
+    // Dynamically insert the navbar and footer
+    getNavbar('navbar');
+    getFooter('footer');
+</script>
+</body>
+</html>
